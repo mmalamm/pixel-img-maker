@@ -1,8 +1,10 @@
 import getAverageRGB from "./getAvgColor"
 
-async function cutImageUp(image, widthOfOnePiece = 5, heightOfOnePiece = 5) {
-  const numColsToCut = (image.width / 5) | 0
-  const numRowsToCut = (image.height / 5) | 0
+const d = 3;
+
+async function cutImageUp(image, widthOfOnePiece = d, heightOfOnePiece = d) {
+  const numColsToCut = (image.width / widthOfOnePiece) | 0
+  const numRowsToCut = (image.height / heightOfOnePiece) | 0
   var imagePieces = []
   for (var x = 0; x < numColsToCut; ++x) {
     for (var y = 0; y < numRowsToCut; ++y) {
